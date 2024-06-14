@@ -1,14 +1,18 @@
 import React from 'react'
-import userImage from '../assets/images/user.jpg'
+import '../sass/main.scss'
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <div className='Card'>
-       <img src={userImage} alt='userImage' />
-       <div className='card_body'>
-        <h1 className='card_name'>Name: Mercy Umoh</h1>
-        <h2 className="card">Male ~ 25 years</h2>
-        <p className="card_description">Looking for a prayerful roommate</p>
+    <div className='card'>  
+      <img className="card__img" src= {props.img}alt='userImage' />    
+       <div className='card__body'>
+       <div className="card__details">
+        <h1 className='card__details--name'>Name: {props.name}</h1>
+        <div className="card__details--more">View</div>
+        <p className='card__details--location'>Location: {props.location}</p>
+        <h2 className="card__details--age">{props.gender} ~ {props.age} years</h2>
+        <h3 className="card__details--description">{props.description}</h3>
+        </div>
        </div>
     </div>
   )

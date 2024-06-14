@@ -1,0 +1,14 @@
+.roommates {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.about__title{
+  font-size: 3rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}

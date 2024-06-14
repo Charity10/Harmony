@@ -1,0 +1,54 @@
+.card{
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 2px 20px $color-gray;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: $radius;
+  align-items: center;
+
+  &__img{
+    width: 80%;
+    height: 20rem;
+    padding: 2rem;
+
+    object-fit: cover;
+  }
+  &__details{
+    display: grid;
+    color: black;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &--name{
+      font-size: 1.5rem;
+      font-weight: 700;
+  }
+
+  &--more{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: $color-secondary;
+    border: 2px solid $color-secondary;
+  }
+
+  &--description{
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem;
+  }
+  &--age{
+    padding: 1rem;
+  }
+  &--location{
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
+  }
