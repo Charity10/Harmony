@@ -4,7 +4,6 @@ import Card from './Card'
 const About = () => {
   return (
     <div className='about__section'>
-      <h1 className='about__title' >Roommate suggestions based on personality test</h1>
       <div className="roommates">
     <Card
     name= 'Calvin Hawkins'
