@@ -6,6 +6,8 @@ module.exports = {
     autoprefixer: {},
   }
 }
+
+
 // postcss.config.js
 // postcss.config.js
 // import autoprefixer from 'autoprefixer';

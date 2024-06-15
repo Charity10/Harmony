@@ -27,7 +27,7 @@ const Signup = () => {
   }
 
   return (
-    <div className='sigup__container'>
+    <div className='signup__container'>
       <h1 className='signup__container--text'>Sign Up</h1>
       <form  className='signupForm' onSubmit={handleSubmit}>
         <label htmlFor='name'>Name:</label>
@@ -50,9 +50,10 @@ const Signup = () => {
           onChange={(event) => setPassword(event.target.value)} required />
 
           <label htmlFor='confirmPassword'>Confirm Password:</label>
-          <input type='password' id='confirmPassword' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
+          <input className='signupInput' type='password' id='confirmPassword' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
 
           <button className='signupButton' type='submit'>Signup</button>
+          <h3>Already have an account? <span>Sign In</span></h3>
           </form>
     </div>
   )
