@@ -1,0 +1,29 @@
+.landingPage{
+  background-image: linear-gradient(to right bottom, rgba(111, 164, 213, 0.596), rgba(110, 240, 196, 0.8)), url(https://images.pexels.com/photos/5538626/pexels-photo-5538626.jpeg?auto=compress&cs=tinysrgb&w=400);
+  // background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+    &--title{
+      font-size: 2rem;
+      font-weight: 700;
+      color: $color-primary;
+    }
+
+        &:hover{
+          color: $color-secondary;
+        }
+      }
+}
