@@ -1,15 +1,24 @@
+import ReactDoM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Home from './components/Home'
 // import About from './components/About'
 import LandingPage from './components/LandingPage'
+import Signin from './pages/Signin'
 
 function App() {
 
   return (
-    <>
-       {/* <Home /> */}
-    <LandingPage />
-      {/* <About /> */}
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/signin" element={<Signin />} />
+      {/* <Route path="/about" element={<About />} /> */}
+      {/* <Route path="*" element={<NotFound />} /> */}
+      {/* <Home />
+      <About /> */}
+      </Routes>
+    </BrowserRouter>
   )
 }
 
