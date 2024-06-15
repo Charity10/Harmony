@@ -26,6 +26,7 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "postcss": "^7.0.39",
     "postcss-import": "^16.1.0",
+    "react-router-dom": "^6.23.1",
     "sass": "^1.77.5",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vite": "^5.2.0"

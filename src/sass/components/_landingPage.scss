@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .landingPage{
   background-image: linear-gradient(to right bottom, rgba(111, 164, 213, 0.596), rgba(110, 240, 196, 0.8)), url(https://images.pexels.com/photos/5538626/pexels-photo-5538626.jpeg?auto=compress&cs=tinysrgb&w=400);
   // background-size: cover;
@@ -24,14 +28,25 @@
       background-color: $color-primary;
       border-radius: $btn-radius;
       color: $white;
-      font-weight: bold;
+      font-weight: 600;
+    &-link{
+      text-decoration: none;
+      color: $white;
+
+      &:hover{
+        color: $black;
+      }
+    }
+      &:hover{
+        background-color: $color-primary-light;
+        color: $black;
       }
   }
-
+  }
     &__slogan{
       background-color: $white;
       text-align: center;
-      margin: 20rem;
+      margin: 20rem auto;
       color: $color-primary;
       font-size: 1.5rem;
       font-weight: 700;
@@ -53,10 +68,17 @@
         font-weight: 700;
         cursor: pointer;
         transition: all 0.3s;
+        
+        &-link{
+          text-decoration: none;
+          color: $white;
+          &:hover{
+            color: $black;
+          }
+        }
 
         &:hover{
           background-color: $color-primary-light;
-          color: $black;
         }
       }
     }
