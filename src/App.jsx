@@ -1,10 +1,10 @@
 import ReactDoM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// import Home from './components/Home'
-// import About from './components/About'
+import Home from './components/Home'
+import About from './components/About'
 import LandingPage from './components/LandingPage'
-import Signin from './pages/Signin'
+import Signup from './pages/Signup'
 
 function App() {
 
@@ -12,11 +12,9 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/signin" element={<Signin />} />
-      {/* <Route path="/about" element={<About />} /> */}
-      {/* <Route path="*" element={<NotFound />} /> */}
-      {/* <Home />
-      <About /> */}
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/about" element={<About />} /> 
+      
       </Routes>
     </BrowserRouter>
   )
