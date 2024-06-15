@@ -52,7 +52,7 @@ const Signup = () => {
           <label htmlFor='confirmPassword'>Confirm Password:</label>
           <input type='password' id='confirmPassword' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
 
-          <button type='submit'>Signup</button>
+          <button className='signupButton' type='submit'>Signup</button>
           </form>
     </div>
   )

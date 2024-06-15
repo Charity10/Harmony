@@ -1,12 +1,26 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 
+ /* @import "./custom-base-styles.css"; */
+
+
+/* @import "./custom-components.css"; */
+
+
+/* @import "./custom-utilities.css"; */
+
+/* @import "./components/Home.jsx";  */
+*{
+  margin:0;
+  padding:0;
+}
 .bg-image {
   background-image: url("../src/assets/roomate2.jpg");
-  background-size: center;
+  background-size: cover;
   background-position:center ; 
   background-repeat: no-repeat;
+  width:100%;
   
 }
