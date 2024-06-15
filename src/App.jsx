@@ -1,7 +1,7 @@
 import ReactDoM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// import Home from './components/Home'
+import Home from './components/Home'
 // import About from './components/About'
 import LandingPage from './components/LandingPage'
 import Signin from './pages/Signin'
