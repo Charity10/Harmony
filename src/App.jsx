@@ -1,4 +1,4 @@
-// import Home from './components/Home'
+import Home from './components/Home'
 // import About from './components/About'
 import LandingPage from './components/LandingPage'
 
@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
+       {/* <Home /> */}
     <LandingPage />
-      {/* <Home />
-      <About /> */}
+      {/* <About /> */}
     </>
   )
 }
