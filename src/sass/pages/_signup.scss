@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
   padding: 20px;
 }
 
@@ -26,4 +27,13 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.switch-btn{
+  background-color: $color-primary;
+  text-decoration: none;
+  color: $white;
+  padding: 0.5rem;
+  border-radius: $radius;
+  font-weight: 700;
 }
