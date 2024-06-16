@@ -28,3 +28,12 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+.switch-btn{
+  background-color: $color-primary;
+  text-decoration: none;
+  color: $white;
+  padding: 0.5rem;
+  border-radius: $radius;
+  font-weight: 700;
+}

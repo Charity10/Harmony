@@ -63,7 +63,8 @@ const Signup = () => {
           <input className='signupInput' type='password' id='confirmPassword' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
 
           <button onSubmit={handleSubmit} className='signupButton' type='submit'>Sign Up</button>
-          <p>Already have an account? <Link to="/signin">Sign In</Link></p>
+
+          <p>Already have an account? <Link className='switch-btn' to="/signin">Sign In</Link></p>
           </form>
     </div>
   )
