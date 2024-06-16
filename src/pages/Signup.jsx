@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import '../sass/main.scss'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../firebase'
 
 const Signup = () => {
   const [name, setName] = useState('')
@@ -10,15 +12,23 @@ const Signup = () => {
 
   const navigate = useNavigate()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+
+    await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+      navigate('/Onboarding')
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage)
+    })
     if (password !== confirmPassword) {
       alert('Passwords do not match');
       return;
     }
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Password, Confirm Password:', password, confirmPassword);
 
     setName('');
     setEmail('');
@@ -29,12 +39,12 @@ const Signup = () => {
   return (
     <div className='signup__container'>
       <h1 className='signup__container--text'>Sign Up</h1>
-      <form  className='signupForm' onSubmit={handleSubmit}>
+      <form  className='signupForm' >
         <label htmlFor='name'>Name:</label>
         <input className='signupInput'
           type='text'
           id='name'
-          value={email}
+          value={name}
           onChange={(event) => setName(event.target.value)} required />
           <label htmlFor='email'>Email Address: </label>
           <input className='signupInput'
@@ -52,8 +62,8 @@ const Signup = () => {
           <label htmlFor='confirmPassword'>Confirm Password:</label>
           <input className='signupInput' type='password' id='confirmPassword' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
 
-          <button className='signupButton' type='submit'>Signup</button>
-          <h3>Already have an account? <span>Sign In</span></h3>
+          <button onSubmit={handleSubmit} className='signupButton' type='submit'>Sign Up</button>
+          <p>Already have an account? <Link to="/signin">Sign In</Link></p>
           </form>
     </div>
   )
