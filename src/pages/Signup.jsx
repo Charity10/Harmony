@@ -15,10 +15,11 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+    await createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
       const user = userCredential.user;
       console.log(user);
-      navigate('/Onboarding')
+      navigate('/about')
     })
     .catch((error) => {
       const errorCode = error.code;
