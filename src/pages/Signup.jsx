@@ -39,7 +39,9 @@ const Signup = () => {
 
   return (
     <div className='signup__container'>
-      <h1 className='signup__container--text'>Sign Up</h1>
+      <h1 className='signup__container--text'>Create an 
+        Account
+      </h1>
       <form  className='signupForm' >
         <label htmlFor='name'>Name:</label>
         <input className='signupInput'

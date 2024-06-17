@@ -3,21 +3,31 @@ import React from 'react';
 
 const UserBoard = ({ userData }) =>{
   return (
-    <div className='dashboardContainer'>
-      <h1>Welcome, {userData.name}!</h1>
-      {/* Display user picture (replace with your logic) */}
-      <img src={userData.image} alt="Profile Picture" className={'profilePicture'} />
+    <div className='dashboard'>
+      <div className="dashboard__profilePic">
+      <img src={userData.image} alt="Profile Picture"/>
+      </div>
 
+      <div className="dashboard__info">
+           
       {/* Option 1: Display user information directly in UserDashboard */}
-      <ul className={'userInfoList'}>
-        <li>Interests: {userData.interests.join(', ')}</li>
-        <li>Looking for roommate: {userData.lookingForRoommate ? 'Yes' : 'No'}</li>
+      <ul>
+      <h2>Welcome, {userData.name}</h2>
+      <p>{userData.gender}, {userData.age}</p>
+        <p><strong>About:</strong><br/> {userData.about}</p>
+        <p><strong>Course of Study:</strong><br/> {userData.course}</p>
+        <p><strong>Language:</strong><br/>{userData.language}</p>
+        <p><strong>Interests:</strong><br/> {userData.interests.join(', ')}</p>
+        <p><stong>Looking for roommate:</stong> {userData.lookingForRoommate ? 'Yes' : 'No'}</p>
       </ul>
 
       {/* Option 2: Use a reusable UserProfile component */}
       {/* <UserProfile userData={userData} /> */}
 
       {/* Additional dashboard features can go here */}
+      </div>
+      <h1>!</h1>
+
     </div>
   );
 }
