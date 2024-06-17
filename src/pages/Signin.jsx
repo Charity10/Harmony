@@ -1,15 +1,26 @@
 import React, {useState} from 'react'
 import '../sass/main.scss'
-import { Link } from 'react-router-dom'
+import { signInWithEmailAndPassword} from 'firebase/auth'
+import { auth } from '../firebase'
+import { Link, useNavigate } from 'react-router-dom'
 const Signin = () => {
-
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Email:', email);
-    console.log('Password:', password);
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      navigate("/user-dashboard")
+      console.log(user)
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+  const errorMessage = error.message;
+  console.log(errorCode, errorMessage)
+    });
 
     setEmail('');
     setPassword('');

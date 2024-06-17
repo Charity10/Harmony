@@ -15,10 +15,11 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    await createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+    await createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
       const user = userCredential.user;
       console.log(user);
-      navigate('/Onboarding')
+      navigate('/about')
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -38,7 +39,9 @@ const Signup = () => {
 
   return (
     <div className='signup__container'>
-      <h1 className='signup__container--text'>Sign Up</h1>
+      <h1 className='signup__container--text'>Create an 
+        Account
+      </h1>
       <form  className='signupForm' >
         <label htmlFor='name'>Name:</label>
         <input className='signupInput'
