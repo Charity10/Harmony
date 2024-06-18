@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import '../sass/main.scss'
-import { toast } from 'react-toastify'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth, db } from '../firebase'
 import {setDoc, doc} from 'firebase/firestore';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
   const [name, setName] = useState('')
@@ -74,6 +75,7 @@ const Signup = () => {
 
           <p>Already have an account? <Link className='switch-btn' to="/signin">Sign In</Link></p>
           </form>
+          <ToastContainer />
     </div>
   )
 }

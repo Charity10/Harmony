@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className="navbar">
-      <ul>
+      <ul className='navbar__list'>
         <li>
           <NavLink to="/user-dashboard" activeClassName="active">
             <i className="fas fa-user"></i> Profile
           </NavLink>
         </li>
-        
+         
         <li>
           <NavLink to="/about" activeClassName="active">
             <i className="fas fa-heart"></i> Find a Roommate

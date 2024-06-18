@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -6,7 +7,7 @@ const questions = [
   "How do you spend most of your days?",
   "What languages do you speak?",
   "How would you describe yourself as a person?",
-  "People refer to you as...",
+  "People refer to you as...", 
   "Which Pets do you prefer?",
   "Rate Your Cleanliness",
   "Music So Loud...",
@@ -27,6 +28,7 @@ const options = [
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill([]));
+  const navigate = useNavigate();
 
   const handleOptionChange = (index, value) => {
     const newAnswers = [...answers];
@@ -55,11 +57,13 @@ const Onboarding = () => {
       // Handle submission
       console.log("Test completed: ", answers);
       toast.success("Thank you for successfully onboarding!");
+      navigate('/user-dashboard');
+      
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-purple-600 to-red-400">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-400 to-white-400">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         <div className="flex justify-between items-center mb-6">
           <button
@@ -97,7 +101,7 @@ const Onboarding = () => {
                 <button
                   key={index}
                   onClick={() => handleOptionChange(currentStep, option)}
-                  className={`p-2 rounded-full border-2 ${answers[currentStep].includes(option) ? 'bg-purple-600 text-white border-purple-600' : 'border-gray-300'}`}
+                  className={`p-2 rounded-full border-2 ${answers[currentStep].includes(option) ? 'bg-blue-600 text-white border-blue-600' : 'border-gray-300'}`}
                 >
                   {option}
                 </button>
@@ -106,7 +110,7 @@ const Onboarding = () => {
           )}
         </div>
         <button
-          className="mt-6 bg-purple-500 text-white py-2 px-4 rounded-lg"
+          className="mt-6 bg-blue-500 text-white py-2 px-4 rounded-lg"
           onClick={handleNext}
         >
           {currentStep === questions.length - 1 ? "Submit" : "Next"}

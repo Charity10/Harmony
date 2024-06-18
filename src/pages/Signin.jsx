@@ -3,7 +3,10 @@ import '../sass/main.scss'
 import { signInWithEmailAndPassword} from 'firebase/auth'
 import { auth } from '../firebase'
 import { Link, useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -31,7 +34,7 @@ const Signin = () => {
 
   return (
     <div className='signin__container'>
-      <h1>Sign In</h1>
+      <h1 className='signin__container--text'><b>Sign In</b></h1>
       <form className='signinForm' onSubmit={handleSubmit}>
         <label htmlFor='email'>Email:</label>
         <input className='signupInput'
@@ -51,6 +54,7 @@ const Signin = () => {
           <p >Don't have an account? <Link  className='switch-btn' to="/signup">Sign up</Link></p>
           
           </form>
+          <ToastContainer />
     </div>
   )
 }

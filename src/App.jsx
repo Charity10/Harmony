@@ -10,14 +10,7 @@ import Signin from './pages/Signin'
 import Onboarding from './pages/Onboarding'
 
 import userData from './userData'
-<<<<<<< HEAD
 import Layout from './components/Layout'
-
-import { ToastContainer } from 'react-toastify'
-=======
-
-function App() {
->>>>>>> 9c32e3ad302afa85015061959657ad0163650816
 
 function App() {
   return (

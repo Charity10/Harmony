@@ -12,7 +12,7 @@ const LandingPage = () => {
       </div>
       
       <div className="landingPage__slogan">
-        <h2>Find your place <br />Find your people</h2>
+        <h2>Live smarter, study harder</h2>
         <button className="landingPage__slogan--btn"><Link className='landingPage__slogan--btn-link' to="/signup">Get Started</Link></button>
       </div>
 
