@@ -6,7 +6,7 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore, setDoc, doc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
-const questions = [
+export const questions = [
   "How do you spend most of your days?",
   "What languages do you speak?",
   "How would you describe yourself as a person?",
@@ -123,7 +123,7 @@ const Onboarding = () => {
               name="gender"
               className="w-full p-2 mb-4 border rounded-lg"
               value={basicInfo.gender}
-              onChange={handleBasicInfoChange}
+              onChange={(e) => setBasicInfo({ ...basicInfo, gender: e.target.value })}
             >
               <option value="">Select Gender</option>
               <option value="male">Male</option>
