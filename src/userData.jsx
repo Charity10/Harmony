@@ -2,7 +2,7 @@
 const userData = {
   name: 'John Doe',
   age:'18',
-  gender: 'Female',
+  gender: 'Male',
   image:  'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   about: 'In terms of living I am respectful, tidy and easy going. My house is my special place and it needs to be very chill. Loves food, videogames, skateboarding, anything a bit weird, vintage, physcology and music.',
   course: 'Computer science',

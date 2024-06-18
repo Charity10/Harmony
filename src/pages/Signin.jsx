@@ -3,6 +3,7 @@ import '../sass/main.scss'
 import { signInWithEmailAndPassword} from 'firebase/auth'
 import { auth } from '../firebase'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -15,11 +16,13 @@ const Signin = () => {
       const user = userCredential.user;
       navigate("/user-dashboard")
       console.log(user)
+      toast.success('User Logged In Successfully', {position: 'top-center',});
     })
     .catch((error) => {
       const errorCode = error.code;
   const errorMessage = error.message;
   console.log(errorCode, errorMessage)
+  toast.error(errorMessage, {position: 'bottom-center',});
     });
 
     setEmail('');

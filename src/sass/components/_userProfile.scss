@@ -1,0 +1,99 @@
+// src/components/UserProfile.scss
+.user-profile {
+  margin-left: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f3f4f6;
+    width: 50vw;
+    padding: 20px;
+    border-radius: 10px;
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .profile-info {
+      h2 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+
+      button {
+        background-color: #ff00ff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .details-section {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    .details-tabs {
+      display: flex;
+      margin-bottom: 20px;
+
+      .tab {
+        background: #f3f4f6;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+
+        &.active {
+          background: #ff00ff;
+          color: #fff;
+        }
+      }
+    }
+
+    .details-content {
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .looking-for {
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+  }
+}

@@ -3,7 +3,7 @@
   padding: 0;
 }
 .landingPage{
-  background-image: linear-gradient(to right bottom, rgba(111, 164, 213, 0.445), rgba(110, 240, 197, 0.276)), url(https://images.pexels.com/photos/5538626/pexels-photo-5538626.jpeg?auto=compress&cs=tinysrgb&w=400);
+  background-image: linear-gradient(to right bottom, rgba(111, 164, 213, 0.121), rgba(110, 240, 197, 0.062)), url(https://images.pexels.com/photos/5538626/pexels-photo-5538626.jpeg?auto=compress&cs=tinysrgb&w=400);
   // background-size: cover;
   height: 100vh;
   width: 100%;
@@ -20,15 +20,17 @@
     width: 100%;
 
     &--title{
-      font-size: 2rem;
-      font-weight: 1000;
+      font-size: 3rem;
+      font-weight: 700;
       color: $color-primary;
+      text-shadow: 2px 2px 4px rgba(255, 254, 254, 0.3)
     }
     &--btn{
       padding: 0.5rem 1rem;
       background-color: $color-primary;
       border-radius: $btn-radius;
       color: $white;
+      font-size: 1.5rem;
       font-weight: 600;
     &-link{
       text-decoration: none;
@@ -49,27 +51,27 @@
       text-align: center;
       margin: 20rem auto;
       color: $white;
-      
-      font-size: 2rem;
+      line-height: 1.2;
+      font-size: 4rem;
       font-weight: 700;
       width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-transform: capitalize;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
 
       &--btn{
-        margin: 2rem;
-        padding: 1rem 2rem;
+        padding: 1.5rem 3rem;
         border: none;
         border-radius: $btn-radius;
         background-color: $color-primary;
         color: $white;
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: 1.2rem;
+        font-weight: 600;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: background-color 0.3s;
         
         &-link{
           text-decoration: none;

@@ -9,18 +9,29 @@ import Signup from './pages/Signup'
 import Signin from './pages/Signin'
 import Onboarding from './pages/Onboarding'
 import userData from './userData'
-function App() {
+import Layout from './components/Layout'
 
+import { ToastContainer } from 'react-toastify'
+
+function App() {
   return (
     <BrowserRouter>
-    <Routes>
+      <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<Signin />} />
+      
+      <Route path='/*' element={<Layout>
+        <Routes>
+        
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/about" element={<About />} /> 
       <Route path="/user-dashboard" element={<UserBoard userData={userData} />} /> 
       
+        </Routes>
+        </Layout>
+      }
+      />
       </Routes>
     </BrowserRouter>
   )

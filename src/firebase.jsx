@@ -1,23 +1,20 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAAwvwK-GRbXUyYD-ZkUmistDr7SmXiW-8",
-  authDomain: "harmony-c267d.firebaseapp.com",
-  projectId: "harmony-c267d",
-  storageBucket: "harmony-c267d.appspot.com",
-  messagingSenderId: "1071543151245",
-  appId: "1:1071543151245:web:f6c9abb2a69cac217010c4",
-  measurementId: "G-B6H215ZK2N"
+  apiKey: "AIzaSyBmUASh9lzkg3qIE3dB-vcuKnBLc5Zu5x4",
+  authDomain: "harmony-9ba84.firebaseapp.com",
+  projectId: "harmony-9ba84",
+  storageBucket: "harmony-9ba84.appspot.com",
+  messagingSenderId: "33926554108",
+  appId: "1:33926554108:web:92b2cdb5e1207e653c5279"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
-export default app;
+export const auth=getAuth()
+export const db=getFirestore(app)
+export default app; 

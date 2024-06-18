@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import '../sass/main.scss'
+import { toast } from 'react-toastify'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../firebase'
+import { auth, db } from '../firebase'
+import {setDoc, doc} from 'firebase/firestore';
 
 const Signup = () => {
   const [name, setName] = useState('')
@@ -14,35 +16,38 @@ const Signup = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-
-    await createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
-      navigate('/about')
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage)
-    })
     if (password !== confirmPassword) {
       alert('Passwords do not match');
       return;
     }
-
-    setName('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
+  try {
+    await createUserWithEmailAndPassword(auth, email, password)
+      const user = auth.currentUser;
+      console.log(user);
+      navigate('/onboarding')
+    
+    if (user){
+    await setDoc(doc(db, 'Users', user.uid), {
+      name: name,
+      email: user.email,
+    }); 
   }
+    console.log('User Registered Successfully');
+    toast.success('User Registered Successfully', {position: 'top-center',});
+
+    } catch(error) {
+      console.error('Error:', error.message);
+      toast.error(error.message, {position: 'bottom-center',});
+   
+  }
+  };
 
   return (
     <div className='signup__container'>
       <h1 className='signup__container--text'>Create an 
         Account
       </h1>
-      <form  className='signupForm' >
+      <form onSubmit={handleSubmit} className='signupForm' >
         <label htmlFor='name'>Name:</label>
         <input className='signupInput'
           type='text'
@@ -65,7 +70,7 @@ const Signup = () => {
           <label htmlFor='confirmPassword'>Confirm Password:</label>
           <input className='signupInput' type='password' id='confirmPassword' value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
 
-          <button onSubmit={handleSubmit} className='signupButton' type='submit'>Sign Up</button>
+          <button className='signupButton' type='submit'>Sign Up</button>
 
           <p>Already have an account? <Link className='switch-btn' to="/signin">Sign In</Link></p>
           </form>
