@@ -5,12 +5,15 @@ import { auth } from '../firebase'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { usePermission } from 'react-permission-role'
 
 
 const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const { setUser } = usePermission(); 
 
   const handleSubmit = (e) => {
     e.preventDefault()

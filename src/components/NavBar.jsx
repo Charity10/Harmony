@@ -1,9 +1,20 @@
 // src/components/Navbar.js
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
-  return (
+  const handleLogOut = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error('Error signing out: ', error);
+      toast.error('Error signing out');
+    }
+  };
+    return (
     <div className="navbar">
       <ul className='navbar__list'>
         <li>
@@ -23,12 +34,11 @@ const Navbar = () => {
             Onboarding test
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/" activeClassName="active">
-            <i className="fas fa-lock"></i> Log Out
-          </NavLink>
-        </li>
       </ul>
+      
+      <button className='logOut--btn' onClick={handleLogOut}>
+            Log Out
+          </button>
     </div>
   );
 };

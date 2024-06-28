@@ -1,7 +1,6 @@
 import ReactDoM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Home from './components/Home'
 import About from './components/About'
 import LandingPage from './components/LandingPage'
 import UserBoard from './components/UserBoard'
@@ -12,8 +11,11 @@ import Onboarding from './pages/Onboarding'
 import userData from './userData'
 import Layout from './components/Layout'
 
+import { PermissionProvider } from 'react-permission-role'
+
 function App() {
   return (
+    <PermissionProvider>
     <BrowserRouter>
       <Routes>
       <Route path="/" element={<LandingPage />} />
@@ -30,6 +32,7 @@ function App() {
        />} /> 
 
       <Route path="/user-dashboard" element={<UserBoard userData={userData} />} /> 
+      <Route path="*" element={<div>Page not found</div>}/> 
 
       
         </Routes>
@@ -38,6 +41,7 @@ function App() {
       />
       </Routes>
     </BrowserRouter>
+    </PermissionProvider>
   )
 }
 

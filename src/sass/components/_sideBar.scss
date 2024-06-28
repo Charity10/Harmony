@@ -5,6 +5,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   height: 100%;
+  display: none;
 
   &__list {
     list-style: none;
@@ -17,8 +18,8 @@
    
     li {
       margin: 15px; 
+      
      &:hover {
-        background-color: $color-primary;
         border-radius: 10px;
         transition: all 0.3s;
         color: $white;
@@ -40,6 +41,17 @@
       }
     }
   }
+}
+
+.logOut--btn {
+  background-color: $color-primary;
+  bottom: 500px;
+  color: $white;
+  font-size: 2rem;
+  font-family: 'O';
+  border-radius: 1.5rem;
+  width: 50%;
+  margin-top: 500px;
 }
 
 
